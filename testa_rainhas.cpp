@@ -197,3 +197,18 @@ TEST_CASE("Teste de validação do tabuleiro inválido:somente rainha presente")
     
     REQUIRE(verificaSolucao(board) == -1);
 };
+
+TEST_CASE("Teste de validação do tabuleiro inválido: valor 5 no tabuleiro") {
+    std::vector<int> board = {
+        0, 0, 0, 1, 0, 0, 0, 0,
+        0, 1, 0, 0, 0, 0, 0, 0,
+        0, 0, 5, 0, 0, 0, 1, 0,
+        0, 0, 0, 0, 0, 1, 0, 0,
+        0, 0, 1, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 1,
+        0, 1, 0, 0, 0, 0, 0, 0,
+        1, 0, 0, 0, 0, 0, 0, 0
+    };
+
+    REQUIRE(verificaSolucao(board) == -1);
+};
