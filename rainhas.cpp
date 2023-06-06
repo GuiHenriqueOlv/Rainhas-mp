@@ -1,8 +1,8 @@
 #include <vector>
+#include <cassert>
 #include <algorithm>
 #include <fstream>
 #include <iostream>
-#include <cassert>
 
 int validaVetor(const std::vector<int>& vetorTab) {
     int rainhas = 0;
@@ -29,6 +29,18 @@ int verificaLinhaEColuna(const std::vector<int>& vetorTab) {
         int numRainhas = std::count(vetorTab.begin() + i * 8, vetorTab.begin() + (i + 1) * 8, 1);
         if (numRainhas > 1) {
             return 0;  // Mais de uma rainha na mesma linha
+        }
+    }
+
+    for (int coluna = 0; coluna < 8; coluna++) {
+        int rainhas = 0;
+        for (int linha = 0; linha < 8; linha++) {
+            if (vetorTab[linha * 8 + coluna] == 1) {
+                rainhas++;
+            }
+        }
+        if (rainhas > 1) {
+            return 0;  // Mais de uma rainha na mesma coluna
         }
     }
 
@@ -75,15 +87,34 @@ int verificaDiagonais(const std::vector<int>& vetorTab) {
 
 int verificaSolucao(const std::vector<int>& vetorTab) {
     if (validaVetor(vetorTab) != 1) {
-        return 0;  // Vetor inválido
+        return -1;  // Entrada inválida
     }
 
-    if (verificaLinhaEColuna(vetorTab) != 1) {
-        return 0;  // Conflito nas linhas ou colunas
-    }
-
-    if (verificaDiagonais(vetorTab) != 1) {
-        return 0;  // Conflito nas diagonais
+    if (verificaLinhaEColuna(vetorTab) != 1 || verificaDiagonais(vetorTab) != 1) {
+        std::ofstream outFile("ataques.txt");
+        if (!outFile) {
+            std::cout << "Erro ao criar o arquivo 'ataques.txt'." << std::endl;
+            return -1;
+        }
+        for (int linha1 = 0; linha1 < 8; linha1++) {
+            for (int coluna1 = 0; coluna1 < 8; coluna1++) {
+                if (vetorTab[linha1 * 8 + coluna1] == 1) {
+                    for (int linha2 = linha1 + 1; linha2 < 8; linha2++) {
+                        for (int coluna2 = 0; coluna2 < 8; coluna2++) {
+                            if (vetorTab[linha2 * 8 + coluna2] == 1) {
+                                if (coluna1 == coluna2 ||
+                                    linha1 - coluna1 == linha2 - coluna2 ||
+                                    linha1 + coluna1 == linha2 + coluna2) {
+                                    outFile << linha1 << "," << coluna1 << " " << linha2 << "," << coluna2 << std::endl;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        outFile.close();
+        return 0;  // Não é uma solução válida
     }
 
     return 1;  // É uma solução válida

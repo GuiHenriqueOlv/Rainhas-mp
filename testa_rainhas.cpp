@@ -60,3 +60,4 @@ TEST_CASE("Teste de validação do tabuleiro inválido: tamanho diferente de 8x8
     };
 
     REQUIRE(verificaSolucao(board) == -1);
+}
