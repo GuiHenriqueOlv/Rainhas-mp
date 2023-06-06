@@ -82,7 +82,7 @@ int verificaDiagonais(const std::vector<int>& vetorTab) {
         }
     }
 
-    return 1;  // É uma solução válida
+    return 1;  // É uma solção válida
 }
 
 int verificaSolucao(const std::vector<int>& vetorTab) {
