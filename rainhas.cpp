@@ -1,5 +1,28 @@
 #include <vector>
 #include <algorithm>
+#include <fstream>
+#include <iostream>
+#include <cassert>
+
+int validaVetor(const std::vector<int>& vetorTab) {
+    int rainhas = 0;
+    if (vetorTab.size() != 64) {
+        return -1;  // Tamanho inválido
+    }
+
+    for (int quadrado : vetorTab) {
+        if (quadrado == 1) {
+            rainhas++;
+        }
+        assert(quadrado == 0 || quadrado == 1);
+    }
+
+    if (rainhas != 8) {
+        return -1;  // Não tem 8 rainhas
+    }
+
+    return 1;  // É uma solução válida
+}
 
 int verificaLinhaEColuna(const std::vector<int>& vetorTab) {
     for (int i = 0; i < 8; i++) {
@@ -50,4 +73,18 @@ int verificaDiagonais(const std::vector<int>& vetorTab) {
     return 1;  // É uma solução válida
 }
 
+int verificaSolucao(const std::vector<int>& vetorTab) {
+    if (validaVetor(vetorTab) != 1) {
+        return 0;  // Vetor inválido
+    }
 
+    if (verificaLinhaEColuna(vetorTab) != 1) {
+        return 0;  // Conflito nas linhas ou colunas
+    }
+
+    if (verificaDiagonais(vetorTab) != 1) {
+        return 0;  // Conflito nas diagonais
+    }
+
+    return 1;  // É uma solução válida
+}
