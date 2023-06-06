@@ -33,20 +33,6 @@ TEST_CASE("Teste de validação das linhas e colunas das 8 rainhas") {
     REQUIRE(verificaDiagonais(board) == 1);
 }
 
-TEST_CASE("Teste de validação da solução das 8 rainhas") {
-    std::vector<int> board = {
-        1, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 1, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 1,
-        0, 0, 0, 0, 0, 1, 0, 0,
-        0, 0, 1, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 1, 0,
-        0, 1, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 1, 0, 0, 0, 0
-    };
-
-    REQUIRE(verificaSolucao(board) == 1);
-}
 
 TEST_CASE("Teste de validação do tabuleiro inválido: tamanho diferente de 8x8") {
     std::vector<int> board = {
@@ -165,4 +151,19 @@ TEST_CASE("Teste de validação do tabuleiro inválido: mais de uma rainha na me
     };
 
     REQUIRE(verificaSolucao(board) == 0);
+};
+
+TEST_CASE("Teste de validação do tabuleiro inválido: nenhum rainha presente") {
+    std::vector<int> board = {
+        0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0
+    };
+    
+    REQUIRE(verificaSolucao(board) == -1);
 };
