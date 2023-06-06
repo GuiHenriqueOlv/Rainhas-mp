@@ -136,3 +136,18 @@ TEST_CASE("Teste de validação do tabuleiro inválido: mais de uma rainha na me
 
     REQUIRE(verificaSolucao(board) == 0);
 };
+
+TEST_CASE("Teste de validação do tabuleiro inválido: mais de uma rainha na mesma diagonal principal") {
+    std::vector<int> board = {
+        1, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 1, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 1,
+        0, 0, 0, 0, 0, 1, 0, 0,
+        0, 0, 1, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 1, 0,
+        0, 1, 0, 0, 0, 0, 0, 0,
+        0, 0, 1, 0, 0, 0, 0, 0
+    };
+
+    REQUIRE(verificaSolucao(board) == 0);
+};
