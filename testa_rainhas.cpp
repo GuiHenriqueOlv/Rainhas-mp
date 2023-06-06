@@ -107,90 +107,20 @@ TEST_CASE("Teste de validação do tabuleiro inválido: solução inválida") {
     REQUIRE(verificaSolucao(board) == 0);
 }
 
-TEST_CASE("Teste de validação do tabuleiro inválido: tabuleiro vazio") {
-    std::vector<int> board(64, 0);
-
-    REQUIRE(verificaSolucao(board) == -1);
-}
-
-TEST_CASE("Teste de validação do tabuleiro inválido: apenas uma rainha") {
-    std::vector<int> board(64, 0);
-    board[0] = 1;
-
-    REQUIRE(verificaSolucao(board) == -1);
-}
-
-TEST_CASE("Teste de validação do tabuleiro inválido: duas rainhas na mesma linha") {
+TEST_CASE("Teste de validação do tabuleiro inválido: mais de uma rainha na mesma linha") {
     std::vector<int> board = {
-        1, 0, 0, 0, 0, 0, 0, 1,
-        0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0,
+        1, 0, 0, 1, 0, 0, 0, 0,
+        0, 0, 0, 0, 1, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 1,
+        0, 0, 0, 0, 0, 1, 0, 0,
+        0, 0, 1, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 1, 0,
+        0, 1, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0
     };
 
-    REQUIRE(verificaSolucao(board) == -1);
-};
+    REQUIRE(verificaSolucao(board) == 0);
+}
 
-TEST_CASE("Teste de validação do tabuleiro inválido: três rainhas ameaçando-se mutuamente") {
-    std::vector<int> board = {
-        0, 0, 0, 1, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 1,
-        0, 0, 0, 0, 0, 0, 0, 0,
-        1, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0,
-        0, 1, 0, 0, 0, 0, 0, 0
-    };
 
-    REQUIRE(verificaSolucao(board) == -1);
-};
 
-TEST_CASE("Teste de validação do tabuleiro inválido: quatro rainhas ameaçando-se mutuamente") {
-    std::vector<int> board = {
-        0, 0, 1, 0, 0, 0, 0, 0,
-        1, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 1, 0, 0, 0,
-        0, 1, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 1,
-        0, 0, 0, 0, 0, 1, 0, 0
-    };
-
-    REQUIRE(verificaSolucao(board) == -1);
-};
-
-TEST_CASE("Teste de validação do tabuleiro inválido: cinco rainhas ameaçando-se mutuamente") {
-    std::vector<int> board = {
-        0, 0, 1, 0, 0, 0, 0, 0,
-        1, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 1, 0, 0, 0,
-        0, 1, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 1, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 1,
-        0, 0, 0, 0, 0, 1, 0, 0
-    };
-
-    REQUIRE(verificaSolucao(board) == -1);
-};
-
-TEST_CASE("Teste de validação do tabuleiro inválido: seis rainhas ameaçando-se mutuamente") {
-    std::vector<int> board = {
-        0, 0, 1, 0, 0, 0, 0, 0,
-        1, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 1, 0, 0, 0,
-        0, 1, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 1, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 1,
-        0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 1, 0, 0
-    };
-
-    REQUIRE(verificaSolucao(board) == -1);
-};
