@@ -119,3 +119,18 @@ TEST_CASE("Teste de validação do tabuleiro inválido: apenas uma rainha") {
 
     REQUIRE(verificaSolucao(board) == -1);
 }
+
+TEST_CASE("Teste de validação do tabuleiro inválido: duas rainhas na mesma linha") {
+    std::vector<int> board = {
+        1, 0, 0, 0, 0, 0, 0, 1,
+        0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0
+    };
+
+    REQUIRE(verificaSolucao(board) == -1);
+}
