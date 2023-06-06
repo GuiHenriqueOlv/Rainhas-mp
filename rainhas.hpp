@@ -5,6 +5,7 @@
 
 
 int verificaLinhaEColuna(const std::vector<int>& vetorTab);
+int verificaDiagonais(const std::vector<int>& vetorTab);
 
 
 #endif
