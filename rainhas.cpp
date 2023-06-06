@@ -13,8 +13,9 @@ int validaVetor(const std::vector<int>& vetorTab) {
     for (int quadrado : vetorTab) {
         if (quadrado == 1) {
             rainhas++;
+        } else if (quadrado != 0) {
+            return -1;  // Valor inválido
         }
-        assert(quadrado == 0 || quadrado == 1);
     }
 
     if (rainhas != 8) {
