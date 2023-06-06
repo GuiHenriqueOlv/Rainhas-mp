@@ -212,3 +212,8 @@ TEST_CASE("Teste de validação do tabuleiro inválido: valor 5 no tabuleiro") {
 
     REQUIRE(verificaSolucao(board) == -1);
 };
+
+TEST_CASE("Teste vazio") {
+   
+    REQUIRE(-1);
+}
