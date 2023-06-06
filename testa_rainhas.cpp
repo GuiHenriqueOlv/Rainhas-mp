@@ -47,3 +47,16 @@ TEST_CASE("Teste de validação da solução das 8 rainhas") {
 
     REQUIRE(verificaSolucao(board) == 1);
 }
+
+TEST_CASE("Teste de validação do tabuleiro inválido: tamanho diferente de 8x8") {
+    std::vector<int> board = {
+        1, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 1, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 1,
+        0, 0, 0, 0, 0, 1, 0, 0,
+        0, 0, 1, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 1, 0,
+        0, 1, 0, 0, 0, 0, 0
+    };
+
+    REQUIRE(verificaSolucao(board) == -1);
