@@ -135,7 +135,4 @@ TEST_CASE("Teste de validação do tabuleiro inválido: mais de uma rainha na me
     };
 
     REQUIRE(verificaSolucao(board) == 0);
-}
-
-
-
+};
