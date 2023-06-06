@@ -33,6 +33,18 @@ TEST_CASE("Teste de validação das linhas e colunas das 8 rainhas") {
 
     REQUIRE(verificaDiagonais(board) == 1);
 }
+ 
+TEST_CASE("Teste de validação da solução das 8 rainhas") {
+    std::vector<int> board = {
+        1, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 1, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 1,
+        0, 0, 0, 0, 0, 1, 0, 0,
+        0, 0, 1, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 1, 0,
+        0, 1, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 1, 0, 0, 0, 0
+    };
 
-
+    REQUIRE(verificaSolucao(board) == 1);
 

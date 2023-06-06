@@ -50,3 +50,4 @@ int verificaDiagonais(const std::vector<int>& vetorTab) {
     return 1;  // É uma solução válida
 }
 
+
