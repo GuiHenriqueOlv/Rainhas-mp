@@ -21,3 +21,4 @@ TEST_CASE("Teste de validação das linhas e colunas das 8 rainhas") {
 
 
 
+
