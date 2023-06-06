@@ -112,3 +112,10 @@ TEST_CASE("Teste de validação do tabuleiro inválido: tabuleiro vazio") {
 
     REQUIRE(verificaSolucao(board) == -1);
 }
+
+TEST_CASE("Teste de validação do tabuleiro inválido: apenas uma rainha") {
+    std::vector<int> board(64, 0);
+    board[0] = 1;
+
+    REQUIRE(verificaSolucao(board) == -1);
+}
