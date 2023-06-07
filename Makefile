@@ -9,8 +9,10 @@ compile: testa_rainhas.cpp   rainhas.cpp rainhas.hpp
 test: testa_rainhas	
 	./testa_rainhas
 	
-cpplint: testa_rainhas.cpp   rainhas.cpp rainhas.hpp
-	cpplint   --exclude=catch.hpp  *.*
+cpplint: testa_rainhas.cpp rainhas.cpp rainhas.hpp
+	cpplint --linelength=120 --exclude=catch.hpp testa_rainhas.cpp rainhas.cpp rainhas.hpp
+
+
 	
 	
 gcov: testa_rainhas.cpp   rainhas.cpp rainhas.hpp 

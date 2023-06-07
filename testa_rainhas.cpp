@@ -1,8 +1,8 @@
+Copyright[2023]<Guilherme Henrique Oliveira Araujo>
 #define CATCH_CONFIG_MAIN
-#include "catch.hpp"
 #include <vector>
+#include "catch.hpp"
 #include "rainhas.hpp"
-
 
 TEST_CASE("Teste de validação das linhas e colunas das 8 rainhas") {
     std::vector<int> board = {
@@ -18,7 +18,7 @@ TEST_CASE("Teste de validação das linhas e colunas das 8 rainhas") {
 
     REQUIRE(verificaLinhaEColuna(board) == 1);
 }
- TEST_CASE("Teste de validação das diagonais das 8 rainhas") {
+TEST_CASE("Teste de validação das diagonais das 8 rainhas") {
     std::vector<int> board = {
         1, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 1, 0, 0, 0,
@@ -34,7 +34,7 @@ TEST_CASE("Teste de validação das linhas e colunas das 8 rainhas") {
 }
 
 
-TEST_CASE("Teste de validação do tabuleiro inválido: tamanho diferente de 8x8") {
+TEST_CASE(" tamanho diferente de 8x8") {
     std::vector<int> board = {
         1, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 1, 0, 0, 0,
@@ -46,8 +46,7 @@ TEST_CASE("Teste de validação do tabuleiro inválido: tamanho diferente de 8x8
     };
 
     REQUIRE(verificaSolucao(board) == -1);
-} 
-
+}
 TEST_CASE("Teste de validação do tabuleiro inválido: menos de 8 rainhas") {
     std::vector<int> board = {
         1, 0, 0, 0, 0, 0, 0, 0,
@@ -93,7 +92,7 @@ TEST_CASE("Teste de validação do tabuleiro inválido: solução inválida") {
     REQUIRE(verificaSolucao(board) == 0);
 }
 
-TEST_CASE("Teste de validação do tabuleiro inválido: mais de uma rainha na mesma linha") {
+TEST_CASE(" mais de uma rainha na mesma linha") {
     std::vector<int> board = {
         1, 0, 0, 1, 0, 0, 0, 0,
         0, 0, 0, 0, 1, 0, 0, 0,
@@ -108,7 +107,7 @@ TEST_CASE("Teste de validação do tabuleiro inválido: mais de uma rainha na me
     REQUIRE(verificaSolucao(board) == 0);
 }
 
-TEST_CASE("Teste de validação do tabuleiro inválido: mais de uma rainha na mesma coluna") {
+TEST_CASE(" mais de uma rainha na mesma coluna") {
     std::vector<int> board = {
         1, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 1, 0, 0, 0,
@@ -123,7 +122,7 @@ TEST_CASE("Teste de validação do tabuleiro inválido: mais de uma rainha na me
     REQUIRE(verificaSolucao(board) == 0);
 };
 
-TEST_CASE("Teste de validação do tabuleiro inválido: mais de uma rainha na mesma diagonal principal") {
+TEST_CASE(" mais de uma rainha na mesma diagonal principal") {
     std::vector<int> board = {
         1, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 1, 0, 0, 0, 0,
@@ -138,7 +137,7 @@ TEST_CASE("Teste de validação do tabuleiro inválido: mais de uma rainha na me
     REQUIRE(verificaSolucao(board) == 0);
 };
 
-TEST_CASE("Teste de validação do tabuleiro inválido: mais de uma rainha na mesma diagonal secundária") {
+TEST_CASE(" mais de uma rainha na mesma diagonal secundária") {
     std::vector<int> board = {
         0, 0, 0, 1, 0, 0, 0, 0,
         0, 1, 0, 0, 0, 0, 0, 0,
@@ -164,7 +163,7 @@ TEST_CASE("Teste de validação do tabuleiro inválido: nenhum rainha presente")
         0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0
     };
-    
+
     REQUIRE(verificaSolucao(board) == -1);
 };
 
@@ -179,7 +178,7 @@ TEST_CASE("Teste de validação do tabuleiro inválido:somente 2 presente") {
         2, 2, 2, 2, 2, 2, 2, 2,
         2, 2, 2, 2, 2, 2, 2, 2
     };
-    
+
     REQUIRE(verificaSolucao(board) == -1);
 };
 
@@ -194,7 +193,7 @@ TEST_CASE("Teste de validação do tabuleiro inválido:somente rainha presente")
         1, 1, 1, 1, 1, 1, 1, 1,
         1, 1, 1, 1, 1, 1, 1, 1
     };
-    
+
     REQUIRE(verificaSolucao(board) == -1);
 };
 
@@ -212,8 +211,6 @@ TEST_CASE("Teste de validação do tabuleiro inválido: valor 5 no tabuleiro") {
 
     REQUIRE(verificaSolucao(board) == -1);
 };
-
 TEST_CASE("Teste vazio") {
-   
     REQUIRE(-1);
 }
