@@ -1,9 +1,10 @@
-#include "rainhas.hpp"
+/// Copyright[2023]<Guilherme Henrique Oliveira Araujo>
 #include <vector>
 #include <cassert>
 #include <algorithm>
 #include <fstream>
 #include <iostream>
+#include "./rainhas.hpp"
 
 
 int validaVetor(const std::vector<int>& vetorTab) {

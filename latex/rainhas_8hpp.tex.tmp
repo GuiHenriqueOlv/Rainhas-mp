@@ -1,0 +1,111 @@
+\hypertarget{rainhas_8hpp}{}\doxysection{rainhas.\+hpp File Reference}
+\label{rainhas_8hpp}\index{rainhas.hpp@{rainhas.hpp}}
+
+
+Arquivo de cabeçalho para resolver o problema das N-\/\+Rainhas.  
+
+
+{\ttfamily \#include $<$vector$>$}\newline
+Include dependency graph for rainhas.\+hpp\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{rainhas_8hpp_a2d1ad08f3e23ea41d92de743d40389a0}{valida\+Vetor}} (const std\+::vector$<$ int $>$ \&vetor\+Tab)
+\begin{DoxyCompactList}\small\item\em Valida o vetor de entrada para o problema das N-\/\+Rainhas. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{rainhas_8hpp_a0831dcae75d8b7d2f72c4694de1e475c}{verifica\+Linha\+EColuna}} (const std\+::vector$<$ int $>$ \&vetor\+Tab)
+\begin{DoxyCompactList}\small\item\em Verifica se as rainhas no tabuleiro se ameaçam em linhas e colunas. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{rainhas_8hpp_a0d3c6f071aab1179a55383451bbfbf20}{verifica\+Diagonais}} (const std\+::vector$<$ int $>$ \&vetor\+Tab)
+\begin{DoxyCompactList}\small\item\em Verifica se as rainhas no tabuleiro se ameaçam em diagonais. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{rainhas_8hpp_ac783d7143b703f54bc580108eec0e8c4}{verifica\+Solucao}} (const std\+::vector$<$ int $>$ \&vetor\+Tab)
+\begin{DoxyCompactList}\small\item\em Verifica se o vetor de entrada representa uma solução válida para o problema das N-\/\+Rainhas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Arquivo de cabeçalho para resolver o problema das N-\/\+Rainhas. 
+
+Copyright\mbox{[}2023\mbox{]}$<$\+Guilherme Henrique Oliveira Araujo$>$
+
+Este arquivo contém declarações de funções relacionadas à resolução do problema das N-\/\+Rainhas. O problema das N-\/\+Rainhas é um quebra-\/cabeça clássico de posicionar N rainhas de xadrez em um tabuleiro N x N de forma que nenhuma rainha ameace outra.
+
+\begin{DoxyAuthor}{Author}
+Guilherme Henrique Oliveira Araujo 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{rainhas_8hpp_a2d1ad08f3e23ea41d92de743d40389a0}\label{rainhas_8hpp_a2d1ad08f3e23ea41d92de743d40389a0}} 
+\index{rainhas.hpp@{rainhas.hpp}!validaVetor@{validaVetor}}
+\index{validaVetor@{validaVetor}!rainhas.hpp@{rainhas.hpp}}
+\doxysubsubsection{\texorpdfstring{validaVetor()}{validaVetor()}}
+{\footnotesize\ttfamily int valida\+Vetor (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ int $>$ \&}]{vetor\+Tab }\end{DoxyParamCaption})}
+
+
+
+Valida o vetor de entrada para o problema das N-\/\+Rainhas. 
+
+Esta função verifica se o vetor de entrada contém posições válidas para as rainhas no problema das N-\/\+Rainhas. O vetor deve representar uma permutação dos números de 0 a N-\/1, onde cada número representa a posição da linha da rainha na coluna correspondente. Assertivas de entrada\+: 
+\begin{DoxyParams}{Parameters}
+{\em vetor\+Tab} & O vetor de entrada que representa as posições das rainhas. Assertivas de saída\+: \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 se o vetor for válido, -\/1 caso contrário.
+\end{DoxyReturn}
+Valida o vetor de entrada para o problema das N-\/\+Rainhas. \mbox{\Hypertarget{rainhas_8hpp_a0d3c6f071aab1179a55383451bbfbf20}\label{rainhas_8hpp_a0d3c6f071aab1179a55383451bbfbf20}} 
+\index{rainhas.hpp@{rainhas.hpp}!verificaDiagonais@{verificaDiagonais}}
+\index{verificaDiagonais@{verificaDiagonais}!rainhas.hpp@{rainhas.hpp}}
+\doxysubsubsection{\texorpdfstring{verificaDiagonais()}{verificaDiagonais()}}
+{\footnotesize\ttfamily int verifica\+Diagonais (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ int $>$ \&}]{vetor\+Tab }\end{DoxyParamCaption})}
+
+
+
+Verifica se as rainhas no tabuleiro se ameaçam em diagonais. 
+
+Esta função verifica se as rainhas no tabuleiro se ameaçam em diagonais. Ela verifica se há algum conflito nas diagonais. Assertivas de entrada\+: 
+\begin{DoxyParams}{Parameters}
+{\em vetor\+Tab} & O vetor que representa as posições das rainhas. Assertivas de saída\+: \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 se nenhum conflito for encontrado, -\/1 caso contrário. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{rainhas_8hpp_a0831dcae75d8b7d2f72c4694de1e475c}\label{rainhas_8hpp_a0831dcae75d8b7d2f72c4694de1e475c}} 
+\index{rainhas.hpp@{rainhas.hpp}!verificaLinhaEColuna@{verificaLinhaEColuna}}
+\index{verificaLinhaEColuna@{verificaLinhaEColuna}!rainhas.hpp@{rainhas.hpp}}
+\doxysubsubsection{\texorpdfstring{verificaLinhaEColuna()}{verificaLinhaEColuna()}}
+{\footnotesize\ttfamily int verifica\+Linha\+EColuna (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ int $>$ \&}]{vetor\+Tab }\end{DoxyParamCaption})}
+
+
+
+Verifica se as rainhas no tabuleiro se ameaçam em linhas e colunas. 
+
+Esta função verifica se as rainhas no tabuleiro se ameaçam em linhas e colunas. Ela verifica se há algum conflito na mesma linha ou coluna. Assertivas de entrada\+: 
+\begin{DoxyParams}{Parameters}
+{\em vetor\+Tab} & O vetor que representa as posições das rainhas. Assertivas de saída\+: \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 se nenhum conflito for encontrado, -\/1 caso contrário. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{rainhas_8hpp_ac783d7143b703f54bc580108eec0e8c4}\label{rainhas_8hpp_ac783d7143b703f54bc580108eec0e8c4}} 
+\index{rainhas.hpp@{rainhas.hpp}!verificaSolucao@{verificaSolucao}}
+\index{verificaSolucao@{verificaSolucao}!rainhas.hpp@{rainhas.hpp}}
+\doxysubsubsection{\texorpdfstring{verificaSolucao()}{verificaSolucao()}}
+{\footnotesize\ttfamily int verifica\+Solucao (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ int $>$ \&}]{vetor\+Tab }\end{DoxyParamCaption})}
+
+
+
+Verifica se o vetor de entrada representa uma solução válida para o problema das N-\/\+Rainhas. 
+
+Esta função verifica se o vetor de entrada representa uma solução válida para o problema das N-\/\+Rainhas. Ela valida o vetor verificando se não há conflitos em linhas, colunas e diagonais. Assertivas de entrada\+: 
+\begin{DoxyParams}{Parameters}
+{\em vetor\+Tab} & O vetor de entrada que representa as posições das rainhas. Assertivas de saída\+: \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 se o vetor representa uma solução válida, -\/1 caso contrário. 
+\end{DoxyReturn}

@@ -1,4 +1,4 @@
-Copyright[2023]<Guilherme Henrique Oliveira Araujo>
+/// Copyright[2023]<Guilherme Henrique Oliveira Araujo>
 #define CATCH_CONFIG_MAIN
 #include <vector>
 #include "catch.hpp"
