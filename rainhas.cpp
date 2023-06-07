@@ -1,8 +1,10 @@
+#include "rainhas.hpp"
 #include <vector>
 #include <cassert>
 #include <algorithm>
 #include <fstream>
 #include <iostream>
+
 
 int validaVetor(const std::vector<int>& vetorTab) {
     int rainhas = 0;
